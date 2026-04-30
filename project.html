@@ -4,43 +4,48 @@
   <head>
     <meta charset="utf-8">
     <title>天気</title>
+    <style>
+    h1{
+      border-bottom-style: inset;
+    }
+    li.samui{
+      background:linear-gradient(.25turn, rgb(214, 247, 247), 50%, rgb(252, 252, 255))
+    }
+    li.atui{
+      background:linear-gradient(.25turn, rgb(245, 208, 208), 50%, rgb(252, 252, 255))
+    }
+    li{
+      list-style-type:none;
+    }
+    li.tennki{
+      background:linear-gradient(.25turn, rgb(211, 211, 211), 50%, rgb(252, 252, 255))
+    }
+    li.shitudo{
+      background:linear-gradient(.25turn, #b8bdeb, 50%, rgb(252, 252, 255))
+    }
+    }
+
+
+    </style>
   </head>
   <body>
     <h1>世界の天気</h1>
 
 <h2>以下の地域の天候に関する情報を検索して表示します</h2>
 
-<ul>
+<ul class="kumori">
   <li>緯度: 35.7013</li>
   <li>経度: 139.5185</li>
-  <li>天気: 曇り</li>
-  <li>最低気温: 9</li>
-  <li>最高気温: 11</li>
-  <li>湿度: 60</li>
+  <li class="tennki">天気: 曇り</li>
+  <li class="samui">最低気温: 9</li>
+  <li class="atui">最高気温: 11</li>
+  <li class="shitudo">湿度: 60</li>
   <li>風速: 1.5</li>
   <li>風向: 北東</li>
   <li>都市名: 東小金井</li>
 </ul>
 
 <img src="97d3dcff187904c12376cddbc2dfbf62.jpg" alt="曇り" width="400">
-
-  <p>
-    世界の天気（検索結果1件）
-    <ul>
-      <li>緯度：35.7013</li>
-      <li>経度：139.5185</li>
-      <li>天気：曇り</li>
-      <li>気温：10℃</li>
-      <li>最低気温：9℃</li>
-      <li>最高気温：11℃</li>
-      <li>湿度：60%</li>
-      <li>風速：1.5m/s</li>
-      <li>風向：北東</li>
-      <li>都市名：東小金井</li>
-    </ul>
-  </p>
-
-<h2>地図</h2>
 
 <img src="IMG_8040.jpg" alt="東小金井の地図" width="800">
 
