@@ -1,6 +1,7 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
+  
    console.log("1件目の検索結果");
    console.log("緯度:", data.coord.lat);
    console.log("経度:", data.coord.lon);
