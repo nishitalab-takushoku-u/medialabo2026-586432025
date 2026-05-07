@@ -12,7 +12,6 @@ function print(data) {
    console.log("風向:", data.wind.deg);
    console.log("都市名:", data.name);
 }
-print(data);
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
