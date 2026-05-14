@@ -16,6 +16,9 @@ function hantei() {
   let ALA=AL.value;
   yoso=Number(ALA);
 
+  let YO=document.querySelector('#yoso');
+  YO=textContent=yoso;
+
   let En=document.querySelector('p#result');
 
   if(yoso===kotae){
@@ -30,7 +33,6 @@ function hantei() {
   else if(yoso>kotae){
     En.textContent='まちがい。答えはもっと小さいですよ';
   }
-yoso=document.querySelector('#yoso');
 }
 let b= document.querySelector('button#kettei');
 b.addEventListener('click',hantei);
