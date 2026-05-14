@@ -17,7 +17,7 @@ function hantei() {
   yoso=Number(ALA);
 
   let YO=document.querySelector('#yoso');
-  YO=textContent=yoso;
+  YO.textContent=yoso;
 
   let En=document.querySelector('p#result');
 
