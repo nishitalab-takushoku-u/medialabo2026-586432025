@@ -12,8 +12,9 @@ function hantei() {
   let AK=document.querySelector('span#kaisu');
   AK.textContent=kaisu;
   
-  let AL=document.querySelector('p#left');
-  yoso=Number(AL);
+  let AL=document.querySelector('#left');
+  let ALA=AL.value;
+  yoso=Number(ALA);
 
   let En=document.querySelector('p#result');
 
