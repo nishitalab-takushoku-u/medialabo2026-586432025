@@ -1,5 +1,5 @@
 function greeting() {
     console.log('こんにちは');
-  }
-let b = document.querySelector('button#print');
-b.addEventListener('click', greeting);
+  } 
+p = document.querySelector('button#print');
+p.addEventListener('click', greeting);
