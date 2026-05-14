@@ -18,11 +18,11 @@ function hantei() {
 
   let En=document.querySelector('p#result');
 
-  if(kaisu>2){
-    En.textContent='まちがい。残念でした。答えは'+kotae+'です。';
-  }
-  else if(yoso===kotae){
+  if(yoso===kotae){
     En.textContent='正解です。おめでとう！';
+  }
+  else if(kaisu>2){
+    En.textContent='まちがい。残念でした。答えは'+kotae+'です。';
   }
   else if(yoso<kotae){
     En.textContent='まちがい。答えはもっと大きいですよ';
