@@ -9,7 +9,7 @@ function hantei() {
   kaisu=kaisu+1;
   let yoso;
 
-  let AK=document.querySelector('p#kaisu');
+  let AK=document.querySelector('span#kaisu');
   AK.textContent=kaisu;
   
   let AL=document.querySelector('p#left');
