@@ -20,7 +20,7 @@ function printDom(data) {
     let b=document.querySelector('body');
     b.insertAdjacentElement('beforeend',d);
 
-    let u=document.createElement('ul');
+    let u=document.createElement('ul');/*
     let l;
 
     l=document.createElement('l');
@@ -62,6 +62,7 @@ function printDom(data) {
     l=document.createElement('l');
     l.textContent="都市名:"+data.name;
     u.insertAdjacentElement('beforeend', l);
+    */
    }
 
 
