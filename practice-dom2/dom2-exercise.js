@@ -16,3 +16,15 @@ let gakka = [
 
 //////////////// ここから下にプログラムを書きたそう!
 
+function show(){
+let u=document.createElement('ul');
+for(let i=0; i<gakka.length;i=i+1){ 
+	l=document.createElement('li');
+	l.textContent=gakka[i].name;
+	u.insertAdjacentElement('beforeend', l);
+}
+let gg=document.querySelector('h2#dept');
+gg.insertAdjacentElement('beforeend', u);
+}
+let b= document.querySelector('button#show');
+b.addEventListener('click',show);
