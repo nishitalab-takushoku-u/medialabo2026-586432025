@@ -33,5 +33,5 @@ function henkou(){
     p = document.querySelector('p#primary');
     p.insertAdjacentElement('afterend', u);
 }
-let bbb= document.querySelector('button#kettei');
-bbb.addEventListener('click',hantei);
+let bbb= document.querySelector('button#henkou');
+bbb.addEventListener('click',henkou);
