@@ -36,46 +36,57 @@ function printDom(data) {
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
-    l.textContent="経度:"+data.coord.lon;
+    l.textContent="経度："+data.coord.lon;
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
-    l.textContent="天気:"+data.weather[0].description;
+    l.textContent="天気："+data.weather[0].description;
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
-    l.textContent="最低気温:"+data.main.temp_min;
+    l.textContent="最低気温："+data.main.temp_min;
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
-    l.textContent="最高気温:"+data.main.temp_max;
+    l.textContent="最高気温："+data.main.temp_max;
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
-    l.textContent="湿度:"+data.main.humidity;
+    l.textContent="湿度："+data.main.humidity;
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
-    l.textContent="風速:"+data.wind.speed;
+    l.textContent="風速："+data.wind.speed;
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
-    l.textContent="風向:"+data.wind.deg;
+    l.textContent="風向："+data.wind.deg;
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
-    l.textContent="都市名:"+data.name;
+    l.textContent="都市名："+data.name;
     u.insertAdjacentElement('beforeend', l);
 
 
     if(data.weather[0].description==='曇りがち'){
       let i = document.querySelector('img#tenki');
-    i.setAttribute('src', 'medialabo2026-586432025/97d3dcff187904c12376cddbc2dfbf62.jpg');
+    i.setAttribute('src', 'kumori.jpg');
+    }
+    else if(data.weather[0].description==='厚い雲'){
+      let i = document.querySelector('img#tenki');
+    i.setAttribute('src', 'kumori.jpg');
+    }
+    else if(data.weather[0].description==='雲'){
+      let i = document.querySelector('img#tenki');
+    i.setAttribute('src', 'kumori.jpg');
     }
     else if(data.weather[0].description==='晴天'){
       let i = document.querySelector('img#tenki');
-    i.setAttribute('src', 'medialabo2026-586432025/97d3dcff187904c12376cddbc2dfbf62.jpg');
-    
+    i.setAttribute('src', 'taiyou.png');
+    }
+    else if(data.weather[0].description==='小雨'){
+      let i = document.querySelector('img#tenki');
+    i.setAttribute('src', 'kumori.jpg');
     }
 
 
