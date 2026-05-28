@@ -2,11 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-     <title>JavaScriptのオブジェクト</title>
-  <script src="weather.js" defer></script>
-    <title>天気</title>
-    <style>
+     <style>
     h1{
       border-bottom-style: inset;
     }
@@ -28,16 +24,25 @@
 
 
     </style>
+    
+    <meta charset="utf-8">
+     <title>JavaScriptのオブジェクト</title>
+  <script src="weather.js" defer></script>
+
+  <title>Ajax通信のデモ</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <title>天気</title>
   </head>
   <body>
     <h1>世界の天気</h1>
-<p>検索キー：  <input type="text" name="ran" id="left" size="20">
-       <button id="kettei">検索</button>
+<p>検索キー：  <input type="search" name="ran" id="left" size="20">
+       <button id="sendRequest">検索</button>
   </p>
 
 <h2>以下の地域の天候に関する情報を検索して表示します</h2>
 
 <ul class="kumori">
+  <img src="97d3dcff187904c12376cddbc2dfbf62.jpg" alt="曇り" width="400">
   <li>緯度: 35.7013</li>
   <li>経度: 139.5185</li>
   <li class="tennki">天気: 曇り</li>
@@ -47,11 +52,10 @@
   <li>風速: 1.5</li>
   <li>風向: 北東</li>
   <li>都市名: 東小金井</li>
+  <img src="IMG_8040.jpg" alt="東小金井の地図" width="800">
 </ul>
 
-<img src="97d3dcff187904c12376cddbc2dfbf62.jpg" alt="曇り" width="400">
-
-<img src="IMG_8040.jpg" alt="東小金井の地図" width="800">
+<img id="tenki">
 
   </body>
 </html>

@@ -1,5 +1,7 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
+let kazu=0;
+
 function print(data) {
    console.log("1件目の検索結果");
    console.log("緯度:", data.coord.lat);
@@ -20,13 +22,13 @@ function printDom(data) {
     let b=document.querySelector('body');
     b.insertAdjacentElement('beforeend',d);
 
-
+    kazu=kazu+1;
 
     let u=document.createElement('ul');
     let l;
 
     l=document.createElement('li');
-    l.textContent="1件目の検索結果";
+    l.textContent=kazu+"件目の検索結果";
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
@@ -65,9 +67,24 @@ function printDom(data) {
     l.textContent="都市名:"+data.name;
     u.insertAdjacentElement('beforeend', l);
 
+
+    if(data.weather[0].description==='曇りがち'){
+      let i = document.querySelector('img#tenki');
+    i.setAttribute('src', 'medialabo2026-586432025/97d3dcff187904c12376cddbc2dfbf62.jpg');
+    }
+    else if(data.weather[0].description==='晴天'){
+      let i = document.querySelector('img#tenki');
+    i.setAttribute('src', 'medialabo2026-586432025/97d3dcff187904c12376cddbc2dfbf62.jpg');
+    
+    }
+
+
     d.insertAdjacentElement('beforeend', u);
-  
+
    }
+
+   let b = document.querySelector('#sendRequest');
+b.addEventListener('click', sendRequest);
 
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
@@ -77,12 +94,81 @@ function printDom(data) {
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
+  let kk = document.querySelector('ul');      // 削除したい要素を検索
+kk.remove();
 
+  let pid=document.querySelector('input[name="ran"]');
+let kensaku = pid.value;
+
+
+if(kensaku==='カイロ'){
+ id=360630;//カイロのid
+}
+
+else if(kensaku==='モスクワ'){
+ id=524901;//モスクワid
+}
+
+else if(kensaku==='ヨハネスブルク'){
+ id=993800;//ヨハネスブルクid
+}
+
+else if(kensaku==='北京'){
+ id=1816670;//北京id
+}
+
+else if(kensaku==='東京'){
+ id=1850147;//東京id
+}
+
+else if(kensaku==='シンガポール'){
+ id=1880252;//シンガポールid
+}
+
+else if(kensaku==='シドニー'){
+ id=2147714;//シドニーid
+}
+
+else if(kensaku==='ロンドン'){
+ id=2643743;//ロンドンid
+}
+
+else if(kensaku==='パリ'){
+ id=2968815;//パリid
+}
+
+else if(kensaku==='リオデジャネイロ'){
+ id=3451189;//リオデジャイロid
+}
+
+else if(kensaku==='ニューヨーク'){
+ id=5128581;//ニューヨークid
+}
+
+else if(kensaku==='ロサンゼルス'){
+ id=5368361;//ロサンゼルス id
+}
+
+
+let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/'+id+'.json';
+
+    axios.get(url)
+        .then(showResult)
+        .catch(showError)  
+        .then(finish);     
 }
 
 // 課題6-1: 通信が成功した時の処理は以下に記述
 function showResult(resp) {
+let data = resp.data;
 
+    if (typeof data === 'string') {
+        data = JSON.parse(data);
+    }
+
+    printDom(data);
+
+    console.log(data.x);
 }
 
 // 課題6-1: 通信エラーが発生した時の処理
@@ -99,50 +185,3 @@ function finish() {
 // 以下はグルメのデータサンプル
 // 注意: 第5回までは以下を変更しないこと！
 // 注意2: 課題6-1 で以下をすべて削除すること
-let data = {
-  "coord": {
-    "lon": 116.3972,
-    "lat": 39.9075
-  },
-  "weather": [
-    {
-      "id": 803,
-      "main": "Clouds",
-      "description": "曇りがち",
-      "icon": "04d"
-    }
-  ],
-  "base": "stations",
-  "main": {
-    "temp": 9.94,
-    "feels_like": 8.65,
-    "temp_min": 9.94,
-    "temp_max": 9.94,
-    "pressure": 1022,
-    "humidity": 14,
-    "sea_level": 1022,
-    "grnd_level": 1016
-  },
-  "visibility": 10000,
-  "wind": {
-    "speed": 2.65,
-    "deg": 197,
-    "gust": 4.84
-  },
-  "clouds": {
-    "all": 53
-  },
-  "dt": 1646542386,
-  "sys": {
-    "type": 1,
-    "id": 9609,
-    "country": "CN",
-    "sunrise": 1646520066,
-    "sunset": 1646561447
-  },
-  "timezone": 28800,
-  "id": 1816670,
-  "name": "北京市",
-  "cod": 200
-};
-
