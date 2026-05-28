@@ -25,6 +25,7 @@ function printDom(data) {
     kazu=kazu+1;
 
     let u=document.createElement('ul');
+    u.classList.add('tenkiii');
     let l;
 
     l=document.createElement('li');
@@ -45,14 +46,17 @@ function printDom(data) {
 
     l=document.createElement('li');
     l.textContent="最低気温："+data.main.temp_min;
+    l.classList.add('samui');
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
     l.textContent="最高気温："+data.main.temp_max;
+    l.classList.add('atui');
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
     l.textContent="湿度："+data.main.humidity;
+    l.classList.add('shitudo');
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
@@ -70,15 +74,15 @@ function printDom(data) {
 
     if(data.weather[0].description==='曇りがち'){
       let i = document.querySelector('img#tenki');
-    i.setAttribute('src', 'kumori.jpg');
+    i.setAttribute('src', 'kumori.png');
     }
     else if(data.weather[0].description==='厚い雲'){
       let i = document.querySelector('img#tenki');
-    i.setAttribute('src', 'kumori.jpg');
+    i.setAttribute('src', 'kumori.png');
     }
     else if(data.weather[0].description==='雲'){
       let i = document.querySelector('img#tenki');
-    i.setAttribute('src', 'kumori.jpg');
+    i.setAttribute('src', 'kumori.png');
     }
     else if(data.weather[0].description==='晴天'){
       let i = document.querySelector('img#tenki');
@@ -86,7 +90,11 @@ function printDom(data) {
     }
     else if(data.weather[0].description==='小雨'){
       let i = document.querySelector('img#tenki');
-    i.setAttribute('src', 'kumori.jpg');
+    i.setAttribute('src', 'ame.png');
+    }
+    else if(data.weather[0].description==='霧'){
+      let i = document.querySelector('img#tenki');
+    i.setAttribute('src', 'kiri.png');
     }
 
 
