@@ -26,10 +26,12 @@ function printDom(data) {
 
     let u=document.createElement('ul');
     u.classList.add('tenkiii');
+    u.style.fontSize='20px';
     let l;
 
     l=document.createElement('li');
     l.textContent=kazu+"件目の検索結果";
+    l.style.fontSize='30px'
     u.insertAdjacentElement('beforeend', l);
 
     l=document.createElement('li');
